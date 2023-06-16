@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Make Type Writer Effects On Text</title>
+  <style>
+    .box {
+      text-align: center;
+      margin: 20px auto;
+    }
+    
+    p {
+      background-color: #323232;
+      color: #fff;
+    }
+    
+    button {
+      margin-top: 30px;
+      cursor: pointer;
+    }
+    
+    p,
+    button {
+      padding: 10px;
+      font-size: 20px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <p data-text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus eveniet nihil ut error officiis, eaque fuga dolore ipsa atque quia.">
+    </p>
+    <button>Start</button>
+  </div>
+
+  <script>
+    let p = document.querySelector('p').getAttribute('data-text'),
+      i = 0,
+      btn = document.querySelector('button');
+
+    btn.onclick = function() {
+      let text = setInterval(function() {
+        document.querySelector('p').textContent += p[i];
+        i += 1;
+        if (i > p.length - 1) {
+          clearInterval(text);
+        }
+      }, 100)
+    }
+  </script>
+</body>
+
+</html>

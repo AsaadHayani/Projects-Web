@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upload Files</title>
+  <style>
+    * {
+      font-family: 'Raleway', sans-serif;
+      font-size: 20px;
+    }
+    
+    .box {
+      margin: 30px auto;
+      border-radius: 10px;
+      text-align: center;
+      background-color: #ddd;
+      padding: 20px;
+      width: 50%;
+    }
+    
+    input {
+      margin-top: 20px;
+      padding: 10px;
+      border-radius: 7px;
+      outline: none;
+      border: none;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body onload="getFiles();">
+  <div class="box">
+    <input type="file" id="file" multiple onchange="getFiles();">
+    <p id="txt"></p>
+  </div>
+
+  <script>
+    function getFiles() {
+      let myFile = window.file;
+      if (myFile.files.length == 0) {
+        window.txt.innerHTML = "Not Found";
+      } else {
+        let text = "";
+        for (let x = 0; x < myFile.files.length; x++) {
+          let file = myFile.files[x];
+          text += "Number File: <b>" + (x + 1) + "</b><br>";
+          text += "Name: <b>" + file.name + "<br>";
+          text += "Size: <b>" + file.size + " KB</b>";
+        }
+        window.txt.innerHTML = text;
+      }
+    }
+  </script>
+</body>
+
+</html>

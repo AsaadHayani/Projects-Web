@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Position Cursor XY</title>
+  <style>
+    body {
+      background: #323232;
+    }
+    
+    .square {
+      width: 500px;
+      height: 300px;
+      margin: 30px auto;
+      border: 4px solid aqua;
+    }
+    
+    h1 {
+      color: white;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="square" onmousemove="getXY(event)" onmouseout="window.xy.innerHTML='X: 0 , Y: 0'"></div>
+  <h1 id="xy"></h1>
+
+  <script>
+    function getXY(e) {
+      let x = e.clientX,
+        y = e.clientY;
+      window.xy.innerHTML = "X: " + x + " , Y: " + y;
+    }
+  </script>
+</body>
+
+</html>

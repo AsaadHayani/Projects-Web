@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Read More And Read Less Using JavaScript</title>
+  <style>
+    body {
+      background-color: #323232;
+    }
+    
+    * {
+      font-size: 20px;
+    }
+    
+    p {
+      color: aqua;
+    }
+    
+    #more {
+      display: none;
+    }
+    
+    #button {
+      color: #ee1c1b;
+      cursor: pointer;
+      outline: none;
+    }
+  </style>
+</head>
+
+<body>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident rem harum natus voluptatibus itaque, eum asperiores? Soluta esse incidunt debitis vitae? Cupiditate quos similique sint quas veniam distinctio minus laudantium quis voluptatum. Autem,
+    dicta? Aperiam recusandae iure nihil blanditiis, laboriosam aspernatur, perferendis ab eveniet odio non minima facilis nemo pariatur accusamus porro nobis repudiandae! Porro perspiciatis dolor sit, ipsa molestiae ratione nostrum nihil possimus modi
+    ipsum est eos commodi odit quia maiores et? Quibusdam aspernatur vel itaque quod praesentium ab expedita!
+    <span id="dots">...</span>
+    <span id="more">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus animi necessitatibus dolorum
+            similique ipsum quisquam eligendi saepe labore amet! Enim est sunt sequi minus officia distinctio, labore
+            adipisci dolorem optio reprehenderit aperiam! Laudantium hic veniam odit doloremque provident est illo
+            recusandae vero, vitae, laboriosam dolor ad fugiat ab adipisci sint, asperiores quasi quae molestiae officia
+            magni ut ex. Ipsa suscipit, numquam enim libero, repellat architecto neque quidem explicabo, voluptatibus
+            pariatur quas placeat qui repellendus reiciendis nemo. Eligendi enim dolorem minima iste ab nemo animi rem
+            explicabo dolore, nesciunt iure non cumque eveniet nobis vero atque perspiciatis dolorum, ut repudiandae eos
+            culpa id nam odio tempora? Id iure molestiae accusamus quo cum earum, molestias excepturi deserunt minus
+            nemo in corrupti perferendis et voluptatem ipsum enim sint iste facilis beatae sequi! Sunt, expedita.
+            Officia natus mollitia a tempore obcaecati ab quam harum quisquam quas nobis, eligendi iusto aliquid ad
+            perspiciatis, velit accusamus ex. Quibusdam pariatur ad, amet, magni explicabo voluptas atque doloremque,
+            cumque natus aliquid modi assumenda? Reiciendis nam tempore, consequuntur libero mollitia repellendus saepe
+            molestias eveniet iure quod perspiciatis consequatur quibusdam doloribus fugiat exercitationem repellat et
+            officiis tenetur asperiores adipisci fuga recusandae rem. Perspiciatis praesentium ab odio minima facilis
+            fuga tempora!</span>
+    <span id="button" onclick="myFunc()">Read More</span>
+  </p>
+
+  <script>
+    function myFunc() {
+      let dots = document.getElementById("dots"),
+        more = document.getElementById("more"),
+        button = document.getElementById("button");
+
+      if (dots.style.display === "none") {
+        dots.style.display = "inline";
+        button.innerHTML = "Read More";
+        more.style.display = "none";
+      } else {
+        dots.style.display = "none";
+        button.innerHTML = "Read Less";
+        more.style.display = "inline";
+      }
+    }
+  </script>
+</body>
+
+</html>

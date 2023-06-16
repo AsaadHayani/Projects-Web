@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Css 3</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+  <style>
+    * {
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      box-sizing: border-box;
+    }
+    
+    body {
+      background-color: #7bfff8;
+    }
+    
+    section {
+      background-color: #7bfff8;
+      color: #0d0638;
+      font-size: 20px;
+      margin-bottom: 20px;
+      text-align: center;
+      padding: 20px;
+      cursor: pointer;
+      transition: all .5s ease-in-out;
+      border-radius: 30px 10px 30px 10px;
+    }
+    
+    .features {
+      border-radius: 40px;
+      background-color: #0d0638;
+      width: 60%;
+      padding: 20px;
+      margin: 40px auto;
+    }
+    
+    .border-radios:hover {
+      border-radius: 40px;
+    }
+    
+    .box-shadow:hover {
+      box-shadow: 10px 10px 5px #0AB, -10px -10px 5px #0AB;
+    }
+    
+    .text-shadow:hover {
+      text-shadow: 10px 10px 5px #0AB;
+    }
+    
+    .rotate:hover {
+      transform: rotate(5deg)
+    }
+    
+    .scale:hover {
+      transform: scale(.9)
+    }
+    
+    .translate:hover {
+      transform: translate(0px, 30px)
+    }
+    
+    .skew:hover {
+      transform: skew(5deg, 5deg)
+    }
+    
+    .flip:hover {
+      transform: scale(1, -1)
+    }
+    
+    .rotate-3D {
+      overflow: hidden;
+    }
+    
+    .rotate-x {
+      width: 42%
+    }
+    
+    .rotate-y {
+      width: 42%
+    }
+    
+    .rotate-x:hover {
+      transform: rotateX(180deg);
+    }
+    
+    .rotate-x {
+      float: left
+    }
+    
+    .rotate-y:hover {
+      transform: rotatey(180deg);
+    }
+    
+    .rotate-y {
+      float: right
+    }
+    
+    .translate-3D:hover {
+      transform: translate3d(30px, 30px, 300px)
+    }
+    
+    .scale-3d:hover {
+      transform: scalez(2) rotatey(30deg)
+    }
+    
+    .opacity:hover {
+      opacity: .5;
+    }
+    
+    .backface {
+      width: 90%;
+      height: 150px;
+      cursor: pointer;
+      transition: all 1s ease-in-out;
+      position: relative;
+      transform-style: preserve-3d;
+      margin: 50px auto;
+    }
+    
+    .backface:hover {
+      transform: rotatex(180deg)
+    }
+    
+    .backface>div {
+      font-size: 80px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      line-height: 150px;
+    }
+    
+    .front {
+      border-radius: 30px 10px 30px 10px;
+      z-index: 2;
+      background-color: #7bfff8;
+      color: #0d0638;
+      backface-visibility: hidden;
+    }
+    
+    .back {
+      border-radius: 30px 10px 30px 10px;
+      z-index: 1;
+      background-color: #fed330;
+      color: #4b4b4b;
+      backface-visibility: hidden;
+      transform: rotatex(180deg)
+    }
+  </style>
+</head>
+
+<body style="text-transform: capitalize;">
+  <article class="features">
+    <section class="border-radios">
+      BORDER RADIOS
+    </section>
+    <section class="box-shadow">
+      BOX SHADOW
+    </section>
+    <section class="text-shadow">
+      TEXT SHADOW
+    </section>
+    <section class="rotate">
+      ROTATE
+    </section>
+    <section class="scale">
+      SCALE
+    </section>
+    <section class="translate">
+      TRANSLATE
+    </section>
+    <section class="skew">
+      SKEW
+    </section>
+    <section class="flip">
+      FLIP
+    </section>
+    <section class="rotate-3D">
+      <section class="rotate-x">ROTATE-X</section>
+      <section class="rotate-y">ROTATE-Y</section>
+    </section>
+    <section class="translate-3D">TRANSLATE 3D</section>
+    <section class="scale-3d">SCALE 3D</section>
+
+    <div class="backface">
+      <div class="front">ASAAD</div>
+      <div class="back">HAYANI</div>
+    </div>
+    <section class="opacity">OPACITY</section>
+</body>
+
+</html>

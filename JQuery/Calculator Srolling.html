@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Calculate Srolling in Jquery</title>
+  <style>
+    body {
+      width: 5000px;
+      height: 5000px;
+      margin: 0;
+    }
+    
+    div {
+      width: 100%;
+      position: fixed;
+    }
+    
+    h1 {
+      text-align: center;
+      color: teal;
+      border: solid;
+      letter-spacing: 2;
+      background-color: #ddd;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <h1 id="result">Result</h1>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    $(document).ready(function() {
+      $(document).scroll(function() {
+        var scrollInfo = "Top: " + $(window).scrollTop() + " , Left: " + $(window).scrollLeft();
+        $("#result").text(scrollInfo);
+      });
+    });
+  </script>
+</body>
+
+</html>

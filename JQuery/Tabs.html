@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tabs Using JQuery</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    body {
+      background-color: cadetblue;
+    }
+    
+    .box {
+      width: 50%;
+      background-color: #fff;
+      margin: 50px auto;
+      padding: 20px;
+      border-radius: 20px;
+      text-align: center;
+    }
+    
+    ul {
+      list-style: none;
+      display: flex;
+      justify-content: space-evenly;
+    }
+    
+    ul li {
+      background-color: #eaeaea;
+      color: #00aeef;
+      padding: 10px;
+      border-radius: 7px;
+      font-size: 20px;
+      cursor: pointer;
+      transition: .5s;
+    }
+    
+    ul li:hover {
+      background-color: cadetblue;
+      color: white;
+      transform: scale(1.1);
+    }
+    
+    .selected {
+      background-color: cadetblue;
+      color: white;
+    }
+    
+    .content {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 0 10px 10px;
+      line-height: 1.8;
+      font-size: 18px;
+    }
+    
+    .content p {
+      color: #797979;
+    }
+    
+    .content p:not(:first-of-type) {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <ul>
+      <li data-value=".About" class="selected">About</li>
+      <li data-value=".Services">Services</li>
+      <li data-value=".History">History</li>
+      <li data-value=".Technical">Technical</li>
+      <li data-value=".Review">Review</li>
+    </ul>
+
+    <div class="content">
+      <p class="About">About ipsum dolor sit amet consectetur adipisicing elit. At, cum! Eum, eius quo! Maiores velit laudantium error quibusdam nihil, voluptatum totam sapiente! Odit, repellat. Sequi, voluptates corporis facilis harum consequuntur reiciendis deleniti
+        atque. Error facilis eos, modi officiis impedit nemo esse laudantium, odit repudiandae cupiditate eum iusto at amet consectetur debitis ipsam sed dolore similique consequatur vero exercitationem quae officia. Expedita ea, modi nobis magni ducimus
+        sequi amet sed, eveniet laboriosam, odio sint. Eius totam eos tempora.</p>
+
+      <p class="Services">Services ipsum dolor sit amet consectetur adipisicing elit. At, cum! Eum, eius quo! Maiores velit laudantium error quibusdam nihil, voluptatum totam sapiente! Odit, repellat. Sequi, voluptates corporis facilis harum consequuntur reiciendis deleniti
+        atque. Error facilis eos, modi officiis impedit nemo esse laudantium, odit repudiandae cupiditate eum iusto at amet consectetur debitis ipsam sed dolore similique consequatur vero exercitationem quae officia. Expedita ea, modi nobis magni ducimus
+        sequi amet sed, eveniet laboriosam, odio sint. Eius totam eos tempora.</p>
+
+      <p class="History">History ipsum dolor sit amet consectetur adipisicing elit. At, cum! Eum, eius quo! Maiores velit laudantium error quibusdam nihil, voluptatum totam sapiente! Odit, repellat. Sequi, voluptates corporis facilis harum consequuntur reiciendis deleniti
+        atque. Error facilis eos, modi officiis impedit nemo esse laudantium, odit repudiandae cupiditate eum iusto at amet consectetur debitis ipsam sed dolore similique consequatur vero exercitationem quae officia. Expedita ea, modi nobis magni ducimus
+        sequi amet sed, eveniet laboriosam, odio sint. Eius totam eos tempora.</p>
+
+      <p class="Technical">Technical ipsum dolor sit amet consectetur adipisicing elit. At, cum! Eum, eius quo! Maiores velit laudantium error quibusdam nihil, voluptatum totam sapiente! Odit, repellat. Sequi, voluptates corporis facilis harum consequuntur reiciendis deleniti
+        atque. Error facilis eos, modi officiis impedit nemo esse laudantium, odit repudiandae cupiditate eum iusto at amet consectetur debitis ipsam sed dolore similique consequatur vero exercitationem quae officia. Expedita ea, modi nobis magni ducimus
+        sequi amet sed, eveniet laboriosam, odio sint. Eius totam eos tempora.</p>
+
+      <p class="Review">Review ipsum dolor sit amet consectetur adipisicing elit. At, cum! Eum, eius quo! Maiores velit laudantium error quibusdam nihil, voluptatum totam sapiente! Odit, repellat. Sequi, voluptates corporis facilis harum consequuntur reiciendis deleniti
+        atque. Error facilis eos, modi officiis impedit nemo esse laudantium, odit repudiandae cupiditate eum iusto at amet consectetur debitis ipsam sed dolore similique consequatur vero exercitationem quae officia. Expedita ea, modi nobis magni ducimus
+        sequi amet sed, eveniet laboriosam, odio sint. Eius totam eos tempora.</p>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    $(document).ready(function() {
+      $("ul li").click(function() {
+        $(this).addClass("selected").siblings().removeClass("selected");
+        $(".content > p").hide();
+        $($(this).data("value")).fadeIn();
+      });
+    });
+  </script>
+</body>
+
+</html>

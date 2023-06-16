@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Acrodion Using JQuery</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: Andalus;
+    }
+    
+    body {
+      background: #f3d889;
+    }
+    
+    .faq {
+      width: 50%;
+      margin: 90px auto;
+      text-align: center;
+    }
+    
+    .faq-item-title {
+      background: #ee5a24;
+      color: white;
+      padding: 10px;
+      cursor: pointer;
+      transition: .5s;
+    }
+    
+    .faq-item-title:hover {
+      background: #fff;
+      color: #ffc312;
+    }
+    
+    .faq-item-content {
+      background: #fff;
+      padding: 10px;
+    }
+    
+    .faq-item:first-child .faq-item-title {
+      border-radius: 10px 10px 0 0;
+    }
+    
+    .faq-item:last-child .faq-item-title {
+      border-radius: 0px 0px 10px 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="faq">
+    <div class="faq-item">
+      <h2 class="faq-item-title">Developer Frontend</h2>
+      <div class="faq-item-content" style="display: none;">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus illo sequi iure, eos consectetur quas quae eligendi modi quibusdam, corrupti quisquam similique maxime a nihil. Magni distinctio libero, nihil illo consectetur suscipit. Maxime eius
+          expedita ad corrupti officiis, quod qui? Eaque necessitatibus porro ipsam itaque saepe tempore optio aspernatur nulla.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <h2 class="faq-item-title">Developer Backend</h2>
+      <div class="faq-item-content" style="display: none;">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus illo sequi iure, eos consectetur quas quae eligendi modi quibusdam, corrupti quisquam similique maxime a nihil. Magni distinctio libero, nihil illo consectetur suscipit. Maxime eius
+          expedita ad corrupti officiis, quod qui? Eaque necessitatibus porro ipsam itaque saepe tempore optio aspernatur nulla.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <h2 class="faq-item-title">Developer Python</h2>
+      <div class="faq-item-content" style="display: none;">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus illo sequi iure, eos consectetur quas quae eligendi modi quibusdam, corrupti quisquam similique maxime a nihil. Magni distinctio libero, nihil illo consectetur suscipit. Maxime eius
+          expedita ad corrupti officiis, quod qui? Eaque necessitatibus porro ipsam itaque saepe tempore optio aspernatur nulla.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    const faq_title = $(".faq-item-title"),
+      faq_content = $(".faq-item-content");
+
+    faq_title.click(function() {
+      const this_title = $(this),
+        this_content = $(this).parent().find(faq_content);
+
+      this_content.slideToggle("slow");
+      faq_content.not(this_content).slideUp("slow");
+    });
+  </script>
+</body>
+
+</html>

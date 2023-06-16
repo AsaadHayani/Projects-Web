@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Table By Click</title>
+  <style>
+    * {
+      font-size: 20px;
+    }
+    
+    div {
+      text-align: center;
+      margin: 20px auto;
+    }
+    
+    table {
+      margin: inherit;
+      background-color: greenyellow;
+    }
+    
+    input {
+      background: greenyellow;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    
+    section {
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div></div>
+  <section>
+    <input type="button" value="Create Table" onclick="create()">
+  </section>
+
+  <script>
+    function create() {
+      let rows = prompt("عدد الاسطر"),
+        cols = prompt("عدد الاعمدة");
+
+      if (rows == "" || rows == null)
+        rows = 10;
+      if (cols == "" || cols == null)
+        cols = 10;
+      createtable(rows, cols);
+    }
+
+    function createtable(n, m) {
+      let output = "<table border='1' width='500' cellspacing='0' cellpadding='5'>";
+      for (i = 0; i < n; i++) {
+        output = output + "<tr>";
+        for (j = 1; j <= m; j++) {
+          let temp = i * m + j;
+          output = output + "<td>" + temp + "</td>";
+        }
+        output = output + "</tr>"
+      }
+      output = output + "</table>";
+      document.querySelector("div").innerHTML = output;
+    }
+  </script>
+</body>
+
+</html>

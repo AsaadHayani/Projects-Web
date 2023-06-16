@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Age In Days</title>
+  <style>
+    h1 {
+      text-align: center;
+      color: brown;
+      border: solid;
+      font-weight: normal;
+      letter-spacing: 2;
+      background-color: #ddd;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 class="age"></h1>
+</body>
+<script>
+  function myAgeIsDays() {
+    let age =
+      prompt('Whats Your Age?');
+    return age * 365;
+  }
+  document.querySelector('.age').innerHTML = "Your Age is : <b>" + myAgeIsDays() + "</b> Days";
+</script>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Colors Change</title>
+  <style>
+    * {
+      text-transform: capitalize;
+      text-align: center;
+    }
+    
+    div {
+      background-color: #ddd;
+      padding: 15px;
+      margin-top: 30px;
+    }
+    
+    input {
+      width: 20%;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>An example demonstrating the use of the <code>&lt;input type="color"&gt;</code> control.
+  </h1>
+
+  <label>Color:</label>
+  <input type="color" value="#0000ff" class="colorweel">
+
+  <div>Watch the paragraph colors change when you adjust the color picker. As you make changes in the color picker, the first paragraph's color changes, as a preview (this uses the <code>input</code> event). When you close the color picker, the <code>change</code>    event fires, and we detect that to change every paragraph to the selected color.</div>
+
+  <script>
+    let colorWell = document.querySelector(".colorweel"),
+      h1 = document.querySelector("h1"),
+      div = document.querySelector("div");
+
+    window.addEventListener("load", startup, false);
+
+    function startup() {
+      colorWell.addEventListener("input", updateFirst, false);
+      colorWell.addEventListener("change", updateAll, false);
+      colorWell.select();
+    }
+
+    function updateFirst(event) {
+      if (h1 && div) {
+        h1.style.color = event.target.value;
+        div.style.backgroundColor = event.target.value;
+      }
+    }
+  </script>
+</body>
+
+</html>

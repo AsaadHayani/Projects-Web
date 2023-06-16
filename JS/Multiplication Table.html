@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>جدول الضرب</title>
+  <style>
+    * {
+      font-family: 'Raleway', sans-serif;
+      font-size: 20px;
+    }
+    
+    .box {
+      margin: 30px auto;
+      border-radius: 10px;
+      text-align: center;
+      background-color: #ddd;
+      padding: 20px;
+      width: 50%;
+    }
+    
+    input {
+      margin-top: 20px;
+      padding: 10px;
+      border-radius: 7px;
+      outline: none;
+      border: none;
+      text-align: center;
+    }
+    
+    button {
+      background-color: crimson;
+      padding: 10px 20px;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <input class="num" />
+    <button>Click</button>
+    <p></p>
+  </div>
+
+  <script>
+    let div = document.querySelector(".num"),
+      btn = document.querySelector("button"),
+      p = document.querySelector("p");
+
+    btn.addEventListener("click", () => {
+      p.innerHTML += `
+        <h2>The Number is: ${div.value} </h2>`;
+      for (let i = 0; i < 11; i++) {
+        p.innerHTML += `
+        ${div.value} * ${i} = ${div.value * i}<br>
+        `;
+        // console.log(i);
+        // console.log(div.value);
+      }
+    });
+  </script>
+</body>
+
+</html>

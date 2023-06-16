@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To Do List</title>
+  <style>
+    * {
+      font-size: 22px;
+      font-family: 'Raleway', sans-serif;
+    }
+    
+    .box {
+      margin: 20px auto;
+      background-color: #ddd;
+      width: 50%;
+      padding: 20px;
+      text-align: center;
+      border-radius: 20px;
+    }
+    
+    input {
+      border: 1px solid #ddd;
+      outline: none;
+      border-radius: 10px;
+      padding: 10px;
+      text-align: center;
+    }
+    
+    button {
+      border: none;
+      background-color: #080;
+      border-radius: 7px;
+      padding: 10px;
+      color: white;
+      cursor: pointer;
+      outline: none;
+      margin-left: 10px;
+    }
+    
+    .row {
+      display: inline-block;
+      margin-top: 20px;
+    }
+    
+    .del {
+      background-color: #f00;
+    }
+    
+    .red {
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <input type="text" placeholder="Enter Item">
+    <button>Add Item</button>
+
+    <div class="content"></div>
+  </div>
+
+  <script>
+    let btn = document.querySelector("button"),
+      content = document.querySelector('.content'),
+      data = [{
+        id: 1,
+        name: "Item 1",
+        desc: "Product"
+      }, {
+        id: 2,
+        name: "Item 2",
+        desc: "Product"
+      }, {
+        id: 3,
+        name: "Item 3",
+        desc: "Product"
+      }];
+
+    function drawUi(items) {
+      content.innerHTML = "";
+      items.forEach(e => {
+        content.innerHTML += `
+		<div class='row'>${e.name}</div>
+			<button onclick='deleteItem(${e.id})' class='del'>Delete</button>
+		</br>
+		`;
+      });
+    }
+
+    window.onload = function() {
+      drawUi(data);
+    }
+
+    btn.addEventListener('click', addItem);
+
+    function addItem() {
+      let input = document.querySelector('input');
+      if (input.value == '') {
+        alert('Enter Item');
+        input.focus();
+      }
+
+      let lastId = data.length ? data[data.length - 1].id : 0;
+      data.push({
+        id: ++lastId,
+        name: input.value,
+        desc: "bla"
+      });
+      let addedItem = data[data.length - 1];
+      content.innerHTML += `
+      <div class='row'>
+      	${addedItem.name}
+      </div>
+      	<button onclick='deleteItem(${addedItem.id})' class='del'>Delete</button>
+      </br>
+      `;
+      input.value = "";
+    }
+
+    function deleteItem(id) {
+      let index = data.map(i => {
+        return i.id;
+      }).indexOf(id);
+      if (index !== -1) {
+        data.splice(index, 1);
+        drawUi(data);
+      }
+      if (data.length == "") {
+        content.innerHTML = '<h1 class="red">Not Found</h1>';
+      }
+    }
+  </script>
+</body>
+
+</html>

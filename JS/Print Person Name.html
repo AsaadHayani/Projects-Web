@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Print Person Name in JS</title>
+  <style>
+    * {
+      text-align: center;
+    }
+    
+    body {
+      background: #323232;
+    }
+    
+    div {
+      margin: 100px auto;
+    }
+    
+    h1 {
+      color: white;
+    }
+    
+    input {
+      padding: 10px;
+      border: 4px solid #fdcb6e;
+      border-radius: 7px;
+      font-weight: bold;
+      outline: none;
+      font-size: 20px;
+    }
+    
+    button {
+      padding: 10px;
+      background: #025dc1;
+      color: white;
+      border: none;
+      border-radius: 7px;
+      outline: none;
+      font-weight: bold;
+      cursor: pointer;
+      outline: none;
+    }
+    
+    #h1 {
+      color: aqua;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <h1>Person Name:</h1>
+    <input type="text" id="input">
+    <button onclick="sayHello()">Click Here</button>
+    <h1 id="h1"></h1>
+  </div>
+
+  <script>
+    function sayHello() {
+      var name = window.input.value;
+      document.getElementById("h1").innerHTML = "Hello " + name;
+    }
+  </script>
+</body>
+
+</html>

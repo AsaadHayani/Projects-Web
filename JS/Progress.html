@@ -1,0 +1,55 @@
+<html>
+
+<head>
+  <style>
+    body {
+      background-color: #FBE9E7;
+      text-align: center;
+    }
+    
+    section {
+      width: 100%;
+      background-color: #FF8A65;
+      margin: 30px auto;
+    }
+    
+    div {
+      width: 1%;
+      height: 60px;
+      background-color: #D84315;
+    }
+    
+    input {
+      padding: 10px;
+      outline: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <section>
+    <div></div>
+  </section>
+  <input type="button" value="Move">
+
+  <script>
+    function move() {
+      var elem = document.querySelector("div");
+      var width = 1;
+      var id = setInterval(frame, 10);
+
+      function frame() {
+        if (width >= 100) {
+          clearInterval(id);
+
+        } else {
+          width++;
+          elem.style.width = width + '%';
+        }
+      }
+    }
+    document.querySelector("input").addEventListener("click", move);
+  </script>
+</body>
+<html>
