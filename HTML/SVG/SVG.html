@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SVG</title>
+</head>
+
+<body>
+    <svg width="1300" height="120">
+        <!-- margin-top, margin-left, width, height, fill,border, border-width  raduis-x, raduis-y -->
+        <rect x="10" y="10" width="60" height="100" fill="red" stroke="blue" stroke-width="1" rx="2" ry="2" />
+
+        <!-- width, height, raduis, centerCircle-x, centerCircle-y, fill, border, border-width -->
+        <circle width="80" height="80" r="50" cx="130" cy="50" fill="green" stroke="yellow" stroke-width="2" />
+
+        <!-- width, height, centerCircle-x, centerCircle-y, raduis-x, raduis-y, fill, border, border-width  -->
+        <ellipse width="100" height="100" cx="270" cy="50" rx="80" ry="50" fill="#f0f" stroke="yellow"
+            stroke-width="2" />
+
+        <!-- first-x, firsty, second-x, second-y, border, border-width border-dasharray(width space width space End...)  -->
+        <line x1="360" y1="10" x2="600" y2="10" stroke="gray" stroke-width="3" stroke-dasharray="10 5 7 4" />
+
+        <!-- first-x, firsty, second-x, second-y, border, border-width border-linecap(butt--square--round) -->
+        <line x1="390" y1="60" x2="570" y2="60" stroke="navy" stroke-linecap="square" />
+
+        <!-- points[x,y x1,y1 x2,y2 End...], border, border-width, border-opacity fill border-linejoin(miter--round--bevel)-->
+        <polygon points="640,10 680,100 600,100" stroke="red" stroke-width="3" stroke-opacity="0.5" fill="brown"
+            stroke-linejoin="round" />
+
+        <!-- points[x,y x1,y1 x2,y2 End...], border, border-width fill -->
+        <polyline points="710,10 820,10 800,100 690,100 710,10" stroke="green" stroke-width="3" fill="lightgreen" />
+
+        <!-- M = MoveTo(X, Y), L = LineTo(X, Y), Z = ClosePath  -->
+        <path d="M880 10 L910 100 L850 100 Z" stroke="green" stroke-width="2" fill="none" />
+
+        <!-- (start---Middle---end) writing-mode=tb || textLength(number)-->
+        <text x="940" y="10" text-anchor="start" textLength=50>Asaad</text>
+        <text x="940" y="30" text-anchor="middle">Wael</text>
+        <text x="940" y="50" text-anchor="end">Alaa</text>
+        <line x1="940" y1="30" x2="960" y2="30" stroke="#f50" />
+
+        <text x="1000" y="30">
+            <tspan dy="10 20 30">text span 1</tspan>
+            <tspan baseline-shift="super">text span 2</tspan>
+            <tspan baseline-shift="sub">text span 3</tspan>
+        </text>
+
+    </svg>
+    <!-- <img src="e.png" alt=""> your browser does not support SVG-->
+    <br>
+
+    <svg width="1300" height="200">
+        <defs>
+            <g id="shapes" fill="red">
+                <rect x="50" y="50" width="50" height="50" />
+                <circle r="50" cx="50" cy="50" />
+            </g>
+        </defs>
+        <use xlink:href="#shapes" x="10" y="10" />
+
+        <rect x="130" y="10" width="100" height="100" stroke="#f50" stroke-width="6" />
+        <image x="130" y="10" width="100" height="100" xlink:href="https://placehold.it/80/ddd" />
+    </svg>
+
+</body>
+
+</html>

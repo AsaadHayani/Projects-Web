@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Canvas</title>
+      <style>
+            canvas {
+                  width: 650px;
+                  height: 400px;
+                  margin: 100px 200px;
+                  border: 2px solid red;
+            }
+      </style>
+</head>
+
+<body>
+      <canvas id="our-canvas"></canvas>
+
+      <script>
+            let theCanvas = document.getElementById("our-canvas"),
+
+                  // Select Context Type
+                  theContext = theCanvas.getContext("2d"),
+
+                  // Canvas Width
+                  w = theCanvas.clientWidth,
+
+                  // Canvas Height
+                  h = theCanvas.height;
+
+            // Set Global Font
+            theContext.font = "15px Tahoma";
+
+            // Draw Chart Column 1
+            theContext.fillStyle = "#d35400";
+            theContext.fillRect(20, 20, 30, h - 20);
+            theContext.fillStyle = "white";
+            theContext.fillText("1", 30, h - 10);
+
+            // Draw Chart Column 2
+            theContext.fillStyle = "#16a085";
+            theContext.fillRect(60, 40, 30, h - 40);
+            theContext.fillStyle = "white";
+            theContext.fillText("2", 70, h - 10);
+
+            // Draw Chart Column 3
+            theContext.fillStyle = "#8e44ad";
+            theContext.fillRect(100, 60, 30, h - 60);
+            theContext.fillStyle = "white";
+            theContext.fillText("3", 110, h - 10);
+
+            // Draw Chart Column 4
+            theContext.fillStyle = "#c0392b";
+            theContext.fillRect(140, 80, 30, h - 80);
+            theContext.fillStyle = "white";
+            theContext.fillText("4", 150, h - 10);
+
+            // Draw Chart Column 5
+            theContext.fillStyle = "#27ae60";
+            theContext.fillRect(180, 100, 30, h - 100);
+            theContext.fillStyle = "white";
+            theContext.fillText("5", 190, h - 10);
+
+            // Draw Chart Column 6
+            theContext.fillStyle = "#2c3e50";
+            theContext.fillRect(220, 120, 30, h - 120);
+            theContext.fillStyle = "white";
+            theContext.fillText("6", 230, h - 10);
+      </script>
+</body>
+
+</html>

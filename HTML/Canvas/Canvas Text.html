@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Canvas</title>
+      <style>
+            canvas {
+                  width: 400px;
+                  height: 200px;
+                  margin: 100px 500px;
+                  border: 2px solid red;
+            }
+      </style>
+</head>
+
+<body>
+      <canvas id="our-canvas"></canvas>
+
+      <script>
+            let theCanvas = document.getElementById("our-canvas"),
+
+                  // Select Context Type
+                  theContext = theCanvas.getContext("2d"),
+
+                  // The Graient
+                  theGradient = theContext.createLinearGradient(0, 0, 200, 0);
+
+            // Add Color Stops
+            theGradient.addColorStop(0, "red");
+            theGradient.addColorStop(1, "blue");
+
+            // Control Line Width
+            theContext.lineWidth = 1;
+
+            // Choose Stroke Style
+            theContext.strokeStyle = theGradient; // Color, Gradient, Pattern
+
+            // Draw Stroke Rectangle
+            theContext.strokeRect(20, 20, 200, 100);
+
+            // Set Font
+            theContext.font = "32px Tahoma";
+
+            // Create Filled Text
+            theContext.strokeStyle = theGradient;
+            theContext.strokeText("Hello Canvas", 30, 50);
+      </script>
+</body>
+
+</html>

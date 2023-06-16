@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Canvas1</title>
+    <style>
+        canvas {
+            margin: 50px;
+            display: block;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="canvas" width="600px" height="300px"></canvas>
+
+
+    <script>
+        var myCanvas = document.getElementById('canvas'),
+
+            myContext = myCanvas.getContext('2d'),
+
+            myCanvasWidth = myCanvas.width,
+
+            myCanvasHeight = myCanvas.clientHeight;
+
+        //======================================================================================================
+
+        // myContext.fillStyle = '#080';
+
+        // myContext.fillRect(10, 10, 100, 50);
+
+        // myContext.fillStyle = '#f00';
+
+        // myContext.fillRect(20, 20, 100, 50);
+
+        // myContext.fillStyle = '#00f';
+
+        // myContext.fillRect(30, 30, 100, 50);
+
+        // myContext.lineWidth = 5;
+
+        // myContext.strokeRect(100, 100, 100, 50);
+
+        // ======================================================================================================
+
+        // myContext.fillStyle = '#080';
+
+        // myContext.fillRect(0, 0, 800, 400);
+
+        // myContext.clearRect(10, 10, 100, 100);
+
+        // ======================================================================================================
+
+        // myContext.fillStyle = '#eee';
+
+        // myContext.fillRect(0, 0, myCanvasWidth, myCanvasHeight);
+
+        // myContext.strokeStyle='#f00';
+
+        // myContext.lineWidth = 5;
+
+        // myContext.moveTo(10,10);
+
+        // myContext.lineTo(130,130);
+
+        // myContext.moveTo(290,10);
+
+        // myContext.lineTo(170,130);
+
+        // myContext.moveTo(10,290);
+
+        // myContext.lineTo(130,170);
+
+        // myContext.moveTo(290,290);
+
+        // myContext.lineTo(170,170);
+
+        // myContext.stroke();
+
+        // ======================================================================================================
+
+        // myContext.font = '60px arial';
+
+        // myContext.fillStyle = '#f00';
+
+        // myContext.strokeStyle = 'yellow';
+
+        // myContext.font = '60px arial';
+
+        // myContext.fillText('A', 20, 50);
+
+        // myContext.fillStyle = '#00f';
+
+        // myContext.font = '50px arial';
+
+        // myContext.fillText('S', 40, 70);
+
+        // myContext.fillStyle = '#f0f';
+
+        // myContext.font = '60px arial';
+
+        // myContext.fillText('A', 60, 90);
+
+        // myContext.fillStyle = '#0f0';
+
+        // myContext.font = '50px arial';
+
+        // myContext.fillText('A', 80, 110);
+
+        // myContext.fillStyle = '#080';
+
+        // myContext.font = '60px arial';
+
+        // myContext.fillText('D', 100, 130);
+
+        // myContext.strokeText('HAYANY', 50, 200);
+
+        // ======================================================================================================
+
+        //هذه الطريقة تستعمل عندما لايكون وسم الكانفاس بصفحة ال html
+        var myPageCanvas = document.createElement('canvas');
+
+        myPageCanvas.id = 'canvas';
+
+        myPageCanvas.width = 600;
+        myPageCanvas.height = 100;
+        myPageCanvas.style.display = 'block';
+        myPageCanvas.style.margin = '50px auto';
+
+        document.body.appendChild(myPageCanvas);
+
+        myContext.fillStyle = '#f00';
+
+        myContext.strokeStyle = '#00f';
+
+        myContext.lineWidth = 3;
+
+        myContext.font = '60px arial';
+
+        myContext.fillText('ASAAD HAYANI', 50, 80);
+
+        myContext.strokeText('ASAAD HAYANY', 50, 80);
+
+        myContext.strokeStyle = '#000';
+
+        myContext.lineWidth = 2;
+
+        myContext.strokeText('ASAAD HAYANI', 50, 80);
+    </script>
+</body>
+
+</html>

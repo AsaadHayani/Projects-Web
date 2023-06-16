@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Canvas</title>
+      <style>
+            canvas {
+                  width: 600px;
+                  height: 400px;
+                  margin: 100px 200px;
+                  border: 2px solid red;
+            }
+      </style>
+</head>
+
+<body>
+      <canvas id="our-canvas"></canvas>
+
+      <script>
+            let theCanvas = document.getElementById("our-canvas"),
+
+                  // Select Context Type
+                  theContext = theCanvas.getContext("2d");
+
+            theContext.shadowColor = "rgba(0, 0, 0, .5)";
+            theContext.shadowBlur = 5;
+            theContext.shadowOffsetX = "5";
+            theContext.shadowOffsetY = "-5";
+
+            theContext.fillStyle = "green";
+            theContext.fillRect(100, 50, 100, 50);
+      </script>
+</body>
+
+</html>

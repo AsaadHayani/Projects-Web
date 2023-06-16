@@ -1,0 +1,232 @@
+1- Difference Between == And ===
+  == => Value
+  === => Value & Type
+
+
+2- Difference Between var And let
+  var => Function Scoop And Hoisting
+  let => Block Scoop And Not Hoisting
+  const => Block Scoop Not Reinitialization And Not Hoisting
+
+
+3- Ways To Convert String To Number
+  var x = "12";
+  1- parseInt(x) => 12
+  2- +x => 12
+  3- Number(x) => 12 New Method
+
+
+4- Difference Between DOM And BOM
+  DOM => Document Object Model
+  BOM => Browser Object Model
+  Window Is Greater Than Document
+
+
+5- Arrays And Object
+  [1, 2, 3] == [1, 2, 3] // => True
+  [1, 2, 3] == [4, 5, 6] // => True
+  [1, 2, 3] == [4, 5, 6, 7] // => False
+
+  {1, 2, 3} == {1, 2, 3} // => True
+  {1, 2, 3} == {4, 5, 6} // => True
+  {1, 2, 3} == {4, 5, 6, 7} // => False
+
+
+6- Difference Between Function Named And Function Expression
+  x1() => x1
+  x2() => Error
+  Function x1() {console.log("x1")} => Function Named
+  var x = Function x2() {console.log("x2")} => Function Expression
+
+
+7- Detect OS Of The Client Machin
+  navigator.appVersion();
+
+
+8- Comparisons
+  True = 1, False = 0
+  console.log(1 > 2 > 3); => False => 1 > 2 = False = 0 > 3 = False
+  console.log(1 < 2 < 3); => True => 1 < 2 = True = 1 < 3 = True
+
+  console.log(0 || 1); => False Or True = 1
+  console.log(1 || 2); => True Or True = 1
+  console.log(0 && 2); => False And True = 0
+  console.log(1 && 2); => True And True = 2 => if (1) {console.log(2);}
+
+  var a = "b",
+      b = "a",
+      c = {b: 2}, // => c.b Or c["b"]
+      d = {a: 5}; // => d.a Or d["a"]
+  console.log(c[a]); => c["b"] = 2
+  console.log(d[b]); => d["a"] = 5
+
+
+9- freeze() || seal()
+  let obj = {
+    name: "asaad",
+  };
+
+  Object.freeze(obj);
+  Object.seal(obj);
+
+  obj.name = "ahmed";
+  obj.title = "front-end";
+
+  console.log(obj);
+
+
+10- Immediatly Invoke Function Expression(IIFE)
+  Is Working With Run The Page(Without Call Up)
+  (function x() {
+    console.log("x");
+  })();
+
+
+11- New Way For Funtion
+  function data(test) {
+    return test;
+  }
+  let x = data `code`;
+  console.log(x);
+
+
+12- Dealing With Return In Function
+  let fun1 = function () {
+    return {
+      a: 1,
+    };
+  };
+
+  let fun2 = function () {
+    return;
+    {
+      a: 1;
+    }
+  };
+  console.log(fun1()); // a:1
+  console.log(fun2()); // undefined
+
+
+13- Dealing With This In Function
+  let C = {
+    a: function () {
+      console.log('a');
+      return this // Back on C
+    }
+    b: function () {
+      console.log('b');
+      return this // Back on C
+    }
+  }
+  C.a().b().a() // C.a() = C
+
+  Example 2
+  let myObj = {
+    foo: "bar",
+    func: function () {
+      let self = this; // Back on myObj
+      console.log("Welcome " + this.foo); // bar
+      console.log("Welcome " + self.foo); // bar
+      (function () {
+        console.log("Welcome " + this.foo); // undefined
+        console.log("Welcome " + self.foo); // bar
+      })();
+    },
+  };
+  myObj.func();
+
+
+14- Dealing With SetTimeOut
+  (function () {
+    console.log(1);
+    setTimeout(() => {
+      console.log(2);
+    }, 1000);
+    setTimeout(() => {
+      console.log(3);
+    }, 0);
+    console.log(4);
+  })();
+  1, 4, 3, 2
+
+
+15- Dealing With Strings And Numbers
+  console.log(1 + "2" + "2"); // 122
+  console.log(1 + +"2" + "2"); // 32
+  console.log(1 + -"1" + "2"); // 02
+  console.log(+"1" + "1" + "2"); // 112
+  console.log("A" - "B" + "2"); // NAN2
+  console.log("A" - "B" + 2); // NAN
+
+
+16- Dealing With Variables
+  var x = 22;
+  function fun() {
+    console.log(x); // undefined
+    var x = 20;
+  }
+  fun();
+
+
+17- First Class Function
+  let arr = [
+    1,
+    2,
+    3,
+    function () {
+      console.log("function from array");
+    },
+  ];
+  arr[3]();
+
+  let obj = {
+    a: function () {
+      console.log("function from object");
+    },
+  };
+  obj.a();
+
+  function x() {
+    return function () {
+      console.log("function from function");
+    };
+  }
+  console.log(x()());
+  let func = x();
+  func();
+
+
+//////////// in React.js ////////////
+18- StateFull & StateLess
+StateFull Component (Class Based Component) = تعني انك معرف ستيت داخل االكومبونانت
+StateLess Component (Function Component UI) = تعني انك لم تقم بتعريف ستيت داخل االكومبونانت
+
+19- لا يجوز استخدام الباراميتر الثاني في دالة ماب كمفتاح فريد في الكود
+لان ستظهر مشكلة عند الحذف او التعديل وهي انه سيحذف الخيار ورقمه وتصبح القيم جديدة تبدا من 0 
+لذلك يفضل استخدام دالة راندم او اي دي 
+
+20- Fragment, Key
+الفراغمينت هو اب وهمي
+ميزته انه يمكننا من استخدام مفتاح فريد داخل الوسم
+
+21- فائدة ال PureComponent
+انها لا تعيد تنفيذ الكود مرة اخرى بعد اتمام تنفيذه اول مرة
+
+22- HOC => Higher Order Component
+فكرته انه يحل مشكلة تكرار الكود بين الملفات بغض النظر عن اختلاف النص  
+
+23- فائدة ال Render Props
+نرسل فنكشن -تقوم بارجاع قيمة- ك بروبس ونستقبلها في الابن مثل كأننا ارسلنا قيمة ثابتة او ستيت
+
+static getDerivedStateFromProps(props, state) {}
+  shouldComponentUpdate(nextProps, nextState) {}
+  getSnapshotBeforeUpdate = (prevProps, prevState) => {};
+  componentDidUpdate(prevProps, prevState) {}
+  render() { };
+  componentWillUnmount() {}
+
+
+//////////// in API ////////////
+24- Object.entries => لجلب قيم ومفتيح الاوبجكت
+    Object.values => لجلب قيم الاوبجكت
+    Object.keys => لجلب مفاتيح الاوبجكت

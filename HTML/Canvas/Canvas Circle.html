@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Canvas</title>
+      <style>
+            canvas {
+                  width: 600px;
+                  height: 400px;
+                  margin: 100px 200px;
+                  border: 2px solid red;
+            }
+      </style>
+</head>
+
+<body>
+      <canvas id="our-canvas"></canvas>
+
+      <script>
+            let theCanvas = document.getElementById("our-canvas"),
+
+                  // Select Context Type
+                  theContext = theCanvas.getContext("2d"),
+
+                  // Full Circle
+                  theCircle = 2 * Math.PI;
+
+            // Begine The Path
+            theContext.beginPath();
+
+            // Adjust Style And Line Width
+            theContext.strokeStyle = "navy";
+            theContext.lineWidth = 1;
+
+            theContext.arc(150, 75, 50, 0, theCircle);// x, y, size, Radial 
+
+            // Draw The Circle
+            theContext.stroke();
+      </script>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Canvas</title>
+      <style>
+            canvas {
+                  width: 650px;
+                  height: 400px;
+                  margin: 100px 200px;
+                  border: 2px solid red;
+            }
+      </style>
+</head>
+
+<body>
+      <canvas id="our-canvas"></canvas>
+
+      <script>
+            let theCanvas = document.getElementById("our-canvas"),
+
+                  // Select Context Type
+                  theContext = theCanvas.getContext("2d");
+
+            // Begine The Path
+            theContext.beginPath();
+
+            // Select The Start Position of The Path 1
+            theContext.moveTo(0, 0);
+
+            //Select The Path Points
+            theContext.lineTo(140, 70);
+
+            // Select The Start Position of The Path 2
+            theContext.moveTo(300, 0);
+
+            //Select The Path Points
+            theContext.lineTo(140, 70);
+
+            // Example Advanced
+            theContext.moveTo(10, 10);
+            theContext.lineTo(10, 100);
+            theContext.lineTo(100, 100);
+            theContext.lineTo(100, 10);
+            // theContext.lineTo(10, 10);
+
+            // Closing He Path
+            theContext.closePath();
+
+            // Adjust Style And Line Width
+            theContext.strokeStyle = "navy";
+            theContext.lineWidth = 1;
+            theContext.fillStyle = "green";
+            theContext.fill();
+
+            // Draw The Path
+            theContext.stroke();
+      </script>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Canvas</title>
+      <style>
+            canvas {
+                  margin: 100px 400px;
+                  border: 2px solid navy;
+            }
+      </style>
+</head>
+
+<body>
+      <img src="t.png" id="our-img">
+      <canvas id="our-canvas"></canvas>
+
+      <script>
+            let theCanvas = document.getElementById("our-canvas"),
+
+                  // Select Context Type
+                  theContext = theCanvas.getContext("2d");
+
+            // The Graient
+            theGradient = theContext.createLinearGradient(0, 0, 200, 0);
+
+            /*
+              x0 = Gradient Start From Left
+              y0 = Gradient Start From Top
+              x1 = Gradient End From Left
+              y1 = Gradient End From Top
+            */
+
+            // Add Color Stops
+            theGradient.addColorStop(0, "red");
+            theGradient.addColorStop(1, "blue");
+
+            //Select The Image
+            let theImg = document.getElementById("our-img"),
+
+                  // Create The Pattern
+                  thePattern = theContext.createPattern(theImg, "repeat");
+
+            // Choose Fill Style
+            theContext.fillStyle = thePattern; // Color, Gradient, Pattern
+
+            // Draw Rectangle
+            theContext.fillRect(0, 0, theCanvas.width, theCanvas.height);
+      </script>
+</body>
+
+</html>

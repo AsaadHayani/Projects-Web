@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="" content="HTML5">
+  <link rel="icon" href="../images/Lock.ico">
+  <title>Elements HTML5</title>
+</head>
+
+<body>
+  <!--  لتنسيق وترتيب النص DIV -->
+  <div align="center">
+    <h1>Headers 1</h1>
+    <h2>Headers 2</h2>
+    <h3>Headers 3</h3>
+    <h4>Headers 4</h4>
+    <h5>Headers 5</h5>
+    <h6>Headers 6</h6>
+  </div>
+
+  <hr>
+
+  <h1 align="center">Anchors</h1>
+  <div dir="rtl">
+    <!-- للانتقال الى الرابط عبر تبويب جديد _blank -->
+    <!-- للانتقال الى الرابط بنفس التبويب _top -->
+    <a href="https://web.whatsapp.com" target="_blank">
+      <img width="100px" height="100px" src="https://img.freepik.com/free-photo/wide-angle-shot-single-tree-growing-clouded-sky-during-sunset-surrounded-by-grass_181624-22807.jpg?w=2000">
+    </a>
+    <br>
+    <a href="mailto:asaad99hayani@gmail.com">Contact us</a>
+    <br>
+    <!-- للذهاب الى اسفل الصفحة -->
+    <a href="#down">Go To Down</a>
+  </div>
+
+  <hr>
+
+  <h1 align="center">Forms</h1>
+
+  <br>
+  <!-- GET لاظهار المعلومات على الرابط -->
+  <!-- POST لاخفاء المعلومات معلومات سرية  -->
+  <form action="Page2.html" method="GET">
+    <input type="text" autofocus name="user" maxlength="10">Username<br>
+    <input type="text" readonly value="Asaad" name="text"><br>
+    <input type="text" disabled value="Hayani" name="text"><br>
+    <input type="email" required name="email">E-mail<br>
+    <input type="password" required name="pass" minlength="8">Password<br>
+    <input type="submit" value="Submit">
+    <input type="file" name="pic" />
+    <br>
+    <input type="number" value="10" min="1" max="15" step="2">
+    <br>
+    <input type="color">
+    <br>
+    <input type="range">
+    <br>
+    <input type="url">
+    <br>
+    <input type="date">
+    <br>
+    <input type="datetime">
+    <br>
+    <input type="datetime-local">
+    <br>
+    <input type="month">
+    <br>
+    <input type="time">
+    <br>
+    <input type="tel">
+    <br>
+    <input type="submit" name="okButton" value="موافق" />
+    <br>
+    <input type="reset" name="resbtn" value="استعادة" />
+  </form>
+
+  <br>
+
+  <form method="post" action="page2.html">
+    <mark>من اين علمت بموقعنا</mark>
+    <br>
+    <input type="checkbox" name="wrKnow" value="nPaper" id="np" />
+    <label for="np">جريدة</label>
+    <br>
+    <input type="checkbox" name="wrKnow" value="wSite" id="ws" checked />
+    <label for="ws">موقع الكتروني</label>
+    <br>
+    <input type="checkbox" name="wrKnow" value="frnd" id="fr" />
+    <label for="fr">صديق</label>
+    <br>
+    <input type="checkbox" name="wrKnow" value="srEng" id="se" />
+    <label for="se">محرك بحث</label>
+    <br>
+    <mark>ما تقييمك لموقعنا</mark>
+    <br>
+    <input type="radio" name="rate" value="good" id="good" checked />
+    <label for="good">جيد</label>
+    <br>
+    <input type="radio" name="rate" value="mid" id="mid" />
+    <label for="mid">متوسط</label>
+    <br>
+    <input type="radio" name="rate" value="bad" id="bad" />
+    <label for="bad">سيء</label>
+  </form>
+
+  <br>
+
+  <form>
+    <label for="area">سيرتك الذاتية</label>
+    <br>
+    <textarea id="area" cols="30" rows="10" name="bio" placeholder="Enter Msg in Textarea"></textarea>
+  </form>
+
+  <form action="" method="get">
+    <fieldset>
+      <legend>البيانات الشخصية</legend>
+      <label for="nameTXT">name</label>
+      <input type="text" name="nameTXT" maxlength="50" />
+      <br> <br>
+      <label for="ageTXT">Age</label>
+      <input type="number" name="ageTXT" maxlength="2" />
+      <br>
+    </fieldset>
+  </form>
+
+  <hr>
+
+  <h1 align="center">Mark/Select/Datalist 1/Datalist 2</h1>
+  <mark>Where are you from</mark>
+  <select name="nationaly" id="nationaly">
+        <optgroup label="Arap">
+            <option>Iraq</option>
+            <option selected="selected">Syria</option>
+            <option>Egypt</option>
+        </optgroup>
+        <optgroup label="English">
+            <option>Turkey</option>
+            <option>England</option>
+            <option>Kanda</option>
+        </optgroup>
+    </select>
+  <br></br>
+
+  <mark>Where are you from</mark>
+  <input list="city">
+  <datalist id="city">
+        <option value="Syria" />
+        <option value="Idleb" />
+        <option value="Homs" />
+        <option value="Halab" />
+        <option value="Hamah" />
+    </datalist>
+
+  <hr>
+
+  <h1 align="center">UL/OL</h1>
+  <ul>
+    <li>HTML</li>
+    <li>HTMl</li>
+    <li>Framework</li>
+  </ul>
+  <ol type="A" reversed>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JS</li>
+    <li>Framework</li>
+  </ol>
+
+  <hr>
+
+  <h1 align="center">Tables</h1>
+
+  <table width="50" border="1">
+    <caption> فاتورة شراء الهواتف </caption>
+    <thead>
+      <tr>
+        <th>اسم الكتاب</th>
+        <th>السعر</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>تعلم البرمجة</td>
+        <td>100</td>
+      </tr>
+      <tr>
+        <td>تعلم الطبخ</td>
+        <td>200</td>
+      </tr>
+      <tr>
+        <td>تعلم الرياضة</td>
+        <td>150</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th>المجموع</th>
+        <th>450</th>
+      </tr>
+    </tfoot>
+  </table>
+
+  <hr>
+
+  <h1 align="center">Videos/Audios</h1>
+
+  <video audio="muted" autoplay="autoplay" controls="controls" height="300px" width="400px" loop="loop" poster="path" src="path" type="video/mp4">
+    </video>
+  <br></br>
+  <audio controls="controls" autoplay="autoplay" loop="loop" preload="auto" src="path" type="audio.mp3">
+    </audio>
+
+  <hr>
+
+  <h1 align="center">iFrame</h1>
+
+  <iframe src="https://elzero.org/" target="" width="500" height="350"></iframe>
+  <iframe width="500" height="350" src="https://www.youtube.com/embed/aycYLVSOtZo?list=PLDoPjvoNmBAw_t_XWUFbBX-c9MafPk9ji" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+  <hr>
+
+  <h1 align="center">Tags</h1>
+
+  <div style="width: 500px;">
+    5<sup>5</sup>
+    <br>
+    <!-- Enities اختصارات للرموز < > ≠ ™ © -->
+    &lt; p &gt; &ne; &trade; &copy; &nbsp;
+    <br>
+    <strong title="لجعل الكلام بالخط الغامق strong">Strong</strong>
+    <br>
+    <b title="لجعل الكلام بالخط الغامق b">غامق</b>
+    <br>
+    <em title="لجعل الكلام مائل em">Italic</em>
+    <br>
+    <i title="لجعل الكلام بالخط الغامق i">مائل</i>
+    <br>
+    <u title="لجعل الكلام مشطوب u">Underline</u>
+    <br>
+    <del title="لجعل الكلام مشطوب del">خط على النص</del>
+    <hr>
+    <!-- blockquote للأحكام او الشعر -->
+    <blockquote cite="www.nourhomsi.com" title="blockquote للأحكام او الشعر">
+      Lorem ipsum dolor sit amet consectetur
+    </blockquote>
+    <br>
+    <!-- q للأحكام او الشعر -->
+    <q title="للأحكام او الشعر">Asaad</q>
+    <br>
+    <abbr title="Abbr">the Internet</abbr>
+    <br>
+    <cite title="cite">Et minus similique omnis blanditiis hic eligendi, consequuntur nesciunt adipisci</cite>
+
+    <br>
+    <progress value="50" max="100"></progress>
+    <br>
+    <p><bdi>السلام</bdi> 1 Welome</p>
+    <br>
+    <code>
+            let x = 10;
+            let y = 20;
+            console.log(x + y);
+        </code>
+    <pre>
+            <code>
+                let x = 10;
+                let y = 20;
+                console.log(x + y);
+            </code>
+        </pre>
+  </div>
+
+  <hr>
+
+  <marquee behavior="" direction="">
+    <img src="https://img.freepik.com/free-photo/wide-angle-shot-single-tree-growing-clouded-sky-during-sunset-surrounded-by-grass_181624-22807.jpg?w=2000" width="100px" height="100px" />
+    <img src="https://cdn.pixabay.com/photo/2014/02/27/16/10/flowers-276014_1280.jpg" width="100px" height="100px" />
+    <img src="https://blog.depositphotos.com/wp-content/uploads/2017/07/Soothing-nature-backgrounds-2-1024x684.jpg" width="100px" height="100px" />
+    <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg" width="100px" height="100px" />
+  </marquee>
+
+  <hr>
+
+  <footer id="down">Footer</footer>
+
+  <a href="#top">Go To Top</a>
+</body>
+
+</html>
