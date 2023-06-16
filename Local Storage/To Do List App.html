@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>To Do List App</title>
+
+</head>
+
+<body>
+	<form>
+		<input type="text" id="item">
+		<input type="submit" value="Add">
+	</form>
+	<ul></ul>
+	<button id="btn">Clear</button>
+
+	<script>
+		let form = document.querySelector('form'),
+			ul = document.querySelector('ul'),
+			input = document.querySelector('#item'),
+			btn = document.querySelector('button'),
+			data = JSON.parse(localStorage.getItem('tasks')) ? JSON.parse(localStorage.getItem('tasks')) : [],
+			items = JSON.parse(localStorage.getItem('tasks')) ? JSON.parse(localStorage.getItem('tasks')) : [];
+
+		function createLi(text) {
+			const li = document.createElement('li');
+			li.textContent = text;
+			ul.appendChild(li);
+		}
+
+		data.map(item => {
+			createLi(item);
+		})
+
+		form.addEventListener('submit', function (e) {
+			e.preventDefault();
+
+			items.push(input.value);
+			localStorage.setItem('tasks', JSON.stringify(items));
+
+			createLi(input.value);
+			input.value = '';
+		});
+
+		btn.addEventListener('click', function () {
+			localStorage.clear();
+			ul.innerHTML = '';
+		}) 
+	</script>
+</body>
+
+</html>

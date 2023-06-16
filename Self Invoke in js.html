@@ -1,0 +1,34 @@
+<html>
+
+<head>
+        
+</head>
+
+<body>
+    <input type="text" id="dollar">
+    <button onclick="calcDays()">Calculate</button>
+    <div id="message"></div>
+</body>
+<script>
+    function calcDays(){
+            var amount=document.getElementById('dollar').value,
+            result=amount*3.75,
+            message=document.getElementById("message");
+            if(amount===""){
+                message.innerHTML="This Field Cant Be Empty";
+            }
+            else if(isNaN(amount)){
+                message.innerHTML="This Field Accept Numbers Only";
+            }
+            else if(amount==="0"){
+                message.innerHTML="The Value Must Not Be 0";
+            }
+            else if(amount<0){
+                message.innerHTML="The Value Must Not Be Nagativ Number";
+            }
+            else{
+                message.innerHTML=amount+" Dollar Is Worth "+result+" Riyal"
+            }
+    }
+    </script>
+</html>
