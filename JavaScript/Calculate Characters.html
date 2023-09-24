@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculate Characters</title>
+  <style>
+    * {
+      font-size: 24px;
+      margin: 30px auto;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <form>
+    <textarea class="text" cols="80" rows="8" maxlength="100"></textarea>
+    <p>Character Left: <span class="number">100</span></p>
+  </form>
+  <script>
+    let myTextarea = document.querySelector('.text'),
+      mySpan = document.querySelector('.number'),
+      maxLength = myTextarea.getAttribute('maxlength');
+
+    // method1
+    // myTextarea.onkeyup = function() {
+    //   mySpan.textContent = 50 - this.value.length;
+    //   mySpan.textContent < 0 ? mySpan.style.color = 'red' : mySpan.style.color = 'black';
+    // };
+
+    // method2
+    myTextarea.oninput = function() {
+      mySpan.innerHTML = maxLength - this.value.length;
+      mySpan.textContent < 0 ? mySpan.style.color = 'red' : mySpan.style.color = 'black';
+    };
+  </script>
+</body>
+
+</html>

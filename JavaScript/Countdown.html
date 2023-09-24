@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Countdown</title>
+  <style>
+    h1 {
+      text-align: center;
+      color: purple;
+      border: solid;
+      font-weight: normal;
+      letter-spacing: 2;
+      background-color: #ddd;
+    }
+  </style>
+</head>
+
+<body>
+  <h1></h1>
+
+  <script>
+    var seconds = 12,
+      h1 = document.querySelector('h1'),
+      secondpass,
+      countdown = setInterval(function() {
+        secondpass();
+
+      }, 1000);
+
+    function secondpass() {
+      var minutes = Math.floor(seconds / 60),
+        remsecond = seconds % 60;
+      if (seconds < 10) {
+        remsecond = "0" + remsecond;
+      }
+      h1.innerHTML = minutes + ":" + remsecond;
+      if (seconds > 0) {
+        seconds = seconds - 1;
+      } else {
+        clearInterval(countdown);
+        h1.innerHTML = "<a href='www.google.com'>Google</a>";
+      }
+    };
+  </script>
+</body>
+
+</html>

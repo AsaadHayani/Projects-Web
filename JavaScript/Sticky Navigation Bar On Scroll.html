@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sticky Navigation Bar On Scroll</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      background: #212121;
+      min-height: 1000Px;
+    }
+    
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: 0.5s;
+      padding: 40px 100px;
+      z-index: 999;
+    }
+    
+    .logo {
+      color: #fff;
+      text-decoration: none;
+      transition: 0.5s;
+    }
+    
+    ul {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    ul li {
+      list-style: none;
+      margin: 0 15px;
+      color: #fff;
+      transition: 0.5s;
+    }
+    
+    .sticky {
+      padding: 5px 100px;
+      background-color: #fff;
+    }
+    
+    .sticky .logo,
+    .sticky ul li {
+      color: #000;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1><a href="#" class="logo">LOGO</a></h1>
+    <ul>
+      <li>Home</li>
+      <li>About</li>
+      <li>Contact</li>
+    </ul>
+  </header>
+  <section class="banner"></section>
+
+  <script>
+    window.addEventListener("scroll", () => {
+      let header = document.querySelector("header");
+      header.classList.toggle("sticky", window.scrollY > 0);
+    });
+  </script>
+</body>
+
+</html>

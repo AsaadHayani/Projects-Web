@@ -1,0 +1,40 @@
+cls                   => Clear The Command
+dir                   => Get Info The Directory
+ls                    => Get List Directory
+
+mkdir or md           => Create Directory
+rmdir or rm         => Remove Directory
+mv                    => Move Or Rename Directory
+rename                => Rename Directory
+cp                    => Copy Directory
+
+cd.> or dell          => Create File
+explorer file.txt       => Open The File
+call file.txt       => Open The File
+
+explorer .            => Open Explorer
+
+-- Info The Command
+cp --help
+rm --help
+grep --help
+
+cat file.txt            => Show Content The File
+grep                  => search on text inside directory or file
+echo Hello > file.txt   => Remove The Text Previos And Add The New Text
+echo Hello >> file.txt  => Add The New Text With The Text Prvios
+
+exit                  => Close The Screen Console
+file                  => Get Types The Files
+tree /a               => Get Tree All Directories
+ping elzero.org       => Get Info The site
+
+systeminfo            => Get Info The Device
+whoami                => Get Name Device
+ipconfig              => Get IP Address
+ipconfig | clip       => Copy The Info To Clipboard
+
+color 0               => Change Color Font Cmd
+color 0C              => Change Background Font Cmd
+color                 => Reset Color
+title Asaad           => Change Title The Cmd

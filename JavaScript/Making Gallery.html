@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Making Gallery</title>
+  <style>
+    body {
+      background-color: #cacaca;
+    }
+    
+    .gallery {
+      margin: 30px auto;
+      text-align: center;
+    }
+    
+    .imgs img {
+      height: 100px;
+      border: 3px solid #ddd;
+    }
+    
+    .imgs img:hover {
+      cursor: pointer;
+      border: 3px solid #555;
+    }
+    
+    .previw img {
+      height: 300px;
+      border: 3px solid#fff;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="gallery">
+    <div class="imgs">
+      <img src="https://cdn.pixabay.com/photo/2014/02/27/16/10/flowers-276014_1280.jpg" alt="" class="thumb">
+      <img src="https://img.freepik.com/free-photo/wide-angle-shot-single-tree-growing-clouded-sky-during-sunset-surrounded-by-grass_181624-22807.jpg?w=2000" alt="" class="thumb">
+      <img src="https://blog.depositphotos.com/wp-content/uploads/2017/07/Soothing-nature-backgrounds-2-1024x684.jpg" alt="" class="thumb">
+      <img src="https://iso.500px.com/wp-content/uploads/2016/03/stock-photo-142984111-1500x1000.jpg" alt="" class="thumb">
+      <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg" alt="" class="thumb">
+    </div>
+    <div class="previw">
+      <img src="https://cdn.pixabay.com/photo/2014/02/27/16/10/flowers-276014_1280.jpg" id="main-img" alt="">
+    </div>
+  </div>
+  <script>
+    let mainImg = document.getElementById("main-img");
+    let thumb = document.querySelectorAll(".thumb");
+
+    for (let i = 0; i < thumb.length; i++) {
+      thumb[i].addEventListener("click", function() {
+        mainImg.src = this.src;
+      });
+    }
+  </script>
+</body>
+
+</html>

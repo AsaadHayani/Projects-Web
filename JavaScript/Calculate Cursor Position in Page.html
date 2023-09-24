@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Position Cursore By [ HTML5 - CSS3 - Javascript ]</title>
+  <style>
+    body {
+      background: #323232;
+    }
+    
+    h1 {
+      width: 100px;
+      color: aqua;
+      margin: 50px auto;
+      padding: 30px;
+      border: 4px solid lime;
+      border-radius: 7px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <h1></h1>
+
+  <script>
+    function mouse(move) {
+      let posX = move.screenX,
+        posY = move.screenY;
+
+      let h1 = document.querySelector('h1');
+      h1.innerHTML = "X: " + posX + ",<br>Y: " + posY;
+    }
+    document.onmousemove = mouse;
+  </script>
+</body>
+
+</html>

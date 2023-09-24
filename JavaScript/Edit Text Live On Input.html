@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Text Live On Input</title>
+  <style>
+    form {
+      text-align: center;
+      margin: 30px auto;
+      font-family: consolas;
+    }
+    
+    textarea {
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <form>
+    <textarea name="" id="title" cols="80" rows="8"></textarea>
+    <h2 id="live"></h2>
+  </form>
+  <script>
+    document.getElementById('title').oninput = function() {
+      document.getElementById('live').textContent = this.value;
+    };
+  </script>
+</body>
+
+</html>

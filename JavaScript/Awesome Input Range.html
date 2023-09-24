@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Awesome Input Range Using JavaScript</title>
+  <style>
+    body {
+      background-color: #e91e63;
+    }
+    
+    .container {
+      margin: 100px auto;
+    }
+    
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: #ff8edc;
+      margin: auto;
+      border-radius: 7px;
+      transform: rotate(-135deg);
+      box-shadow: 2px 2px 12px 0 black;
+    }
+    
+    h2 {
+      font-size: 40px;
+      text-align: center;
+      font-family: Ebrima;
+      transform: rotate(135deg);
+      position: relative;
+      top: 25px;
+    }
+    
+    .content {
+      text-align: center;
+      margin: 100px auto;
+    }
+    
+    input {
+      width: 80%;
+      height: 20px;
+      background-color: #ff8edc;
+      border-radius: 7px;
+      box-shadow: inset 0 3px 18px rgba(0, 0, 0, 0.6);
+      appearance: none;
+    }
+    
+    input::-webkit-slider-thumb {
+      width: 40px;
+      height: 40px;
+      background-color: white;
+      border-radius: 50%;
+      cursor: pointer;
+      appearance: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="box">
+      <h2></h2>
+    </div>
+
+    <div class="content">
+      <input type="range" max="100" min="0" value="100">
+    </div>
+  </div>
+
+  <script>
+    let input = document.querySelector("input"),
+      h2 = document.querySelector("h2");
+
+    h2.innerHTML = input.value;
+    input.oninput = function() {
+      h2.innerHTML = this.value;
+    }
+  </script>
+</body>
+
+</html>

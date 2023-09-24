@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Form Sign-Up Using HTML5-CSS3</title>
+  <style>
+    * {
+      font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    }
+    
+    body {
+      background: #feca74;
+    }
+    
+    .container {
+      width: 40%;
+      padding: 20px;
+      margin: 50px auto;
+      background: #323232;
+      text-align: center;
+      border-radius: 10px;
+      box-shadow: 0 3px 30px 0 #323232;
+    }
+    
+    h1 {
+      color: white;
+    }
+    
+    input {
+      width: 95%;
+      text-align: center;
+      padding: 10px;
+      background: none;
+      color: white;
+      border: none;
+      border-bottom: 1px solid #fff;
+      font-size: 18px;
+      outline: none;
+      transition: 0.5s;
+    }
+    
+    input:last-child {
+      margin: 0;
+      margin-top: 20px;
+      border: 1px solid #fff;
+      border-radius: 7px;
+      cursor: pointer;
+    }
+    
+    input:focus {
+      border-color: #ff9d00;
+    }
+  </style>
+</head>
+
+<body>
+  <form class="container">
+    <h1>Login</h1>
+    <input type="text" placeholder="First-Name" />
+    <input type="text" placeholder="Last-Name" />
+    <input type="email" placeholder="Email" />
+    <input type="password" placeholder="Password" />
+    <input type="password" placeholder="Re-Password" />
+    <input type="submit" value="Submit" />
+  </form>
+</body>
+
+</html>

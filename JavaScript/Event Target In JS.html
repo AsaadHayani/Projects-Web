@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Target In JS</title>
+  <style>
+    .box {
+      border: 1px solid black;
+      text-align: center;
+      margin: 20px auto;
+    }
+    
+    .box * {
+      margin: 10px 0;
+    }
+  </style>
+</head>
+
+<body onclick="myfunc(event)">
+  <div class="box">
+    <section>Bigging</section>
+    <h1>Title</h1>
+    <span>Text</span>
+    <p>String</p>
+    <div>Container</div>
+    <footer>End</footer>
+    <button>Button</button>
+    <input type="text">
+    <h2 id="test"></h2>
+  </div>
+  <script>
+    function myfunc(event) {
+      // document.getElementById("test").innerHTML = e.target.tagName;
+      document.getElementById("test").innerHTML = event.target.nodeName;
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hide Placeholder On Input Focus</title>
+  <style>
+    * {
+      font-size: 20px;
+      text-align: center;
+    }
+    
+    .box {
+      margin: 30px auto;
+      border-radius: 10px;
+      background-color: #ddd;
+      padding: 20px;
+      width: 50%;
+    }
+    
+    input {
+      padding: 10px;
+      border-radius: 7px;
+      border: none;
+      outline: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <input placeholder="On Focus"></input>
+    </form>
+    <script>
+      let input = document.querySelector('input');
+      // Method1
+      // input.onfocus = function () {
+      //     if (this.placeholder === 'On Focus')
+      //         this.placeholder = '';
+      //     // this.placeholder===?'On Focus':
+      // };
+
+      // input.onblur = function () {
+      //     if (this.placeholder === '')
+      //         this.placeholder = 'On Focus';
+      // };
+
+      // Method2
+      input.onfocus = function() {
+        this.setAttribute('data-place', this.getAttribute('placeholder'));
+
+        this.setAttribute('placeholder', '');
+      }
+      input.onblur = function() {
+        this.setAttribute('placeholder', this.getAttribute('data-place'));
+
+        this.setAttribute('data-place', '');
+      }
+    </script>
+</body>
+
+</html>

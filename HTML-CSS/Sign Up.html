@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Window Sign-Up Using HTML5-CSS3</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: consolas;
+    }
+    
+    body {
+      background: #8f4426;
+    }
+    
+    form {
+      width: 40%;
+      background: #f9b282;
+      margin: 20px auto;
+      padding: 20px;
+      border-radius: 7px;
+    }
+    
+    h1 {
+      text-align: center;
+    }
+    
+    input {
+      width: 100%;
+      margin: 8px 0;
+      padding: 15px;
+      border: none;
+      border-radius: 7px;
+      font-size: 18px;
+      display: block;
+      outline: none;
+    }
+    
+    input:last-child {
+      background: #de6b35;
+      color: #fff;
+      cursor: pointer;
+      transition: .5s;
+    }
+    
+    input:last-child:hover {
+      background: #bd4d19;
+    }
+  </style>
+</head>
+
+<body>
+  <form action="">
+    <h1>Sign Up</h1>
+    <label for="">Full Name</label>
+    <input type="text" placeholder="Enter Full Name">
+    <label for="">Email</label>
+    <input type="email" placeholder="Enter Emial">
+    <label for="">Password</label>
+    <input type="password" placeholder="Enter Password">
+    <label for="">Re-password</label>
+    <input type="password" placeholder="Enter Re-password">
+    <label for="">Your Age</label>
+    <input type="datetime-local">
+    <input type="submit" value="Submit">
+  </form>
+</body>
+
+</html>

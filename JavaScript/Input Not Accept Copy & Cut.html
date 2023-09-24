@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Input Not Accept Copy & Cut</title>
+  <style>
+    * {
+      text-align: center;
+    }
+    
+    body {
+      background: #323232;
+    }
+    
+    div {
+      margin: 50px auto;
+    }
+    
+    input {
+      padding: 20px;
+      border: 4px solid aqua;
+      border-radius: 10px;
+      outline: none;
+      font-size: 20px;
+      font-weight: bold;
+    }
+    
+    input:last-of-type {
+      border-color: lime;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <input type="text" placeholder="Not Copy" oncopy="noCopy(event)">
+    <input type="text" placeholder="Not Cut" oncut="noCut(event)">
+  </div>
+
+  <script>
+    function noCopy(e) {
+      e.preventDefault();
+    }
+
+    function noCut(e) {
+      e.preventDefault();
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Photos Gallary Using JQuery</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer"
+  />
+  <style>
+    body {
+      background: #e2c0b6;
+    }
+    
+    .slider {
+      width: 60%;
+      margin: 100px auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .slide img {
+      width: 100%;
+      display: none;
+    }
+    
+    .prev,
+    .next {
+      cursor: pointer;
+      font-size: 40px;
+      font-weight: bold;
+    }
+    
+    .slide .show {
+      display: inline;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="slider">
+    <i class="prev fas fa-arrow-left"></i>
+    <div class="slide">
+      <img src="https://cdn.pixabay.com/photo/2014/02/27/16/10/flowers-276014_1280.jpg" class="show" alt="">
+      <img src="https://img.freepik.com/free-photo/wide-angle-shot-single-tree-growing-clouded-sky-during-sunset-surrounded-by-grass_181624-22807.jpg?w=2000" alt="">
+      <img src="https://blog.depositphotos.com/wp-content/uploads/2017/07/Soothing-nature-backgrounds-2-1024x684.jpg" alt="">
+      <img src="https://iso.500px.com/wp-content/uploads/2016/03/stock-photo-142984111-1500x1000.jpg" alt="">
+      <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg" alt="">
+    </div>
+    <i class="next fas fa-arrow-right"></i>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    $(document).ready(function() {
+      $(".next").click(function() {
+        const now_img = $(".show"),
+          next_img = now_img.next();
+
+        if (next_img.length) {
+          now_img.fadeOut("slow").removeClass("show");
+          next_img.fadeIn("slow").addClass("show");
+        }
+      });
+
+      $(".prev").click(function() {
+        const now_img = $(".show"),
+          prev_img = now_img.prev();
+
+        if (prev_img.length) {
+          now_img.fadeOut("slow").removeClass("show");
+          prev_img.fadeIn("slow").addClass("show");
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>

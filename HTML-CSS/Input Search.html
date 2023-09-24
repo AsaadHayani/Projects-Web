@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Input Search By HTML5 - CSS3</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      background: #00cec9;
+    }
+    
+    div {
+      width: 60px;
+      height: 60px;
+      background: #4a4a4a;
+      border-radius: 50px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: .5s;
+    }
+    
+    div:hover {
+      width: 300px;
+    }
+    
+    div input {
+      width: 100%;
+      color: #e1d8e2;
+      background: transparent;
+      padding: 20px;
+      border: none;
+      outline: none;
+      font-size: 20px;
+      position: relative;
+    }
+    
+    div span {
+      width: 50px;
+      color: #00cec0;
+      background: #6b6b6b;
+      border-radius: 50%;
+      font-size: 30px;
+      line-height: 50px;
+      text-align: center;
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      transition: all .4s ease-in-out;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <input type="text" name="" placeholder="Search" id="">
+    <span><i class="fa fa-search"></i></span>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<html>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Simple Dynamic Clock</title>
+  <style>
+    h1 {
+      text-align: center;
+      font-size: 35px;
+      color: purple;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 class="clock"></h1>
+  <script>
+    function showTime() {
+      var now = new Date(),
+        hours = now.getHours(),
+        minutes = now.getMinutes(),
+        seconds = now.getSeconds();
+      if (hours < 10 && minutes < 10 && seconds < 10) {
+        hours = '0' + hours;
+        minutes = '0' + minutes;
+        seconds = '0' + seconds;
+      }
+      document.querySelector('.clock').textContent = hours + ':' + minutes + ':' + seconds;
+    }
+    window.onload = function() {
+      setInterval(showTime, 500);
+    };
+  </script>
+</body>
+
+</html>
